@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <main>
+    <header>
         <h1>Slide puzzle</h1>
+        <div class="container"><img src="assets/icons/eua-flag.png" class="language en" id="language"></div>
+    
+    </header>
+    <main>
         <div id="game_field">
             <div class="cell empty" id="cell_1"></div>
             <div class="cell empty" id="cell_2"></div>
@@ -21,27 +25,27 @@
             <div class="cell empty" id="cell_9"></div>
         </div>
         <div class="game_info">
-            <button id="start">Novo jogo</button>
-            <button id="reset">Reiniciar</button>
-            <p>Tempo: <span id="time">0s</span></p>
-            <p>Movimentos: <span id="moves">0</span></p>
+            <button id="start">New game</button>
+            <button id="reset">Restart</button>
+            <div id="flex"><p id="time_label">Time: </p><span id="time">0s</span></div>
+            <div id="flex"><p id="moves_label">Moves: </p><span id="moves">0</span></div>
         </div>
 
         <div class="modal" id="modal">
             <div class="modal_content">
-                <h2>Parabéns!</h2>
-                <p>Você completou o jogo em <span id="modal_time">0s</span> com <span id="modal_moves">0</span> movimentos.</p>
+                <h2 id="modal_h2">Congratulations!</h2>
+                <div id="modal_message">You finished the game in <span id="modal_time">0s</span> with <span id="modal_moves">0</span> moves.</div>
                 <div class="buttons">
-                    <button id="modal_close">Fechar</button>
-                    <button id="modal_restart">Começar outro jogo</button>
+                    <button id="modal_close">Close</button>
+                    <button id="modal_restart">Start a new game</button>
                 </div>
             </div>
         </div>
 
     </main>
     <footer>
-        <p>Criado por <a href="https://github.com/JoaoVictor-C">João Victor  <i class="fa-brands fa-github"></i></a></p>
-        <p>Código fonte:  <a href="http://"><i class="fa-solid fa-code-compare fa-spin"></i></a></p>
+        <p id="created_by">Created by <a href="https://github.com/JoaoVictor-C" target="_blank">João Victor  <i class="fa-brands fa-github"></i></a></p>
+        <p id="code_link">Code: <a href="https://github.com/JoaoVictor-C/Sliding-game" target="_blank">Sliding puzzle <i class="fa-solid fa-code-compare fa-spin"></i></a></p>
     </footer>
 
     <script src="https://kit.fontawesome.com/2b862a7e21.js" crossorigin="anonymous"></script>

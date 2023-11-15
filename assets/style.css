@@ -15,6 +15,45 @@ body {
     align-items: center;
 }
 
+header {
+    width: 100%;
+    height: fit-content;
+    margin-top: 30px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.language {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.language img {
+    width: 100%;
+    height: 100%;
+}
+
+.language:active {
+    opacity: 0.7;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -22,13 +61,6 @@ main {
     align-items: center;
     width: 100%;
     height: 100%;
-}
-
-h1 {
-    text-align: center;
-    font-size: 3em;
-    font-weight: bold;
-    margin-bottom: 20px;
 }
 
 #game_field {
@@ -40,9 +72,8 @@ h1 {
     align-content: center;
     gap: 13px;
     position: relative;  
-    width: 400px;
-    height: 400px;
-    padding: 6px;
+    width: 380px;
+    height: 380px;
     border: 1px solid rgba(10, 0, 0, 0.2);
     border-radius: 10px;
     background-color: #fff;
@@ -62,7 +93,7 @@ h1 {
     cursor: pointer;
     font-size: 2em;
     font-weight: bold;
-
+    transition: transform 0.3s ease;
 }
 
 .cell:hover {
@@ -78,6 +109,7 @@ h1 {
 .empty {
     cursor: default;
     font: 0/0 a;
+    visibility: hidden;
 }
 
 .empty:hover {
@@ -88,6 +120,10 @@ h1 {
 .empty:active {
     background-color: #fff;
     box-shadow: none;
+}
+
+.move {
+    transform: translate(0, 0);
 }
 
 .game_info {
@@ -221,4 +257,12 @@ footer a:hover {
 
 footer a:active {
     color: #000;
+}
+
+#flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 1em;
 }
