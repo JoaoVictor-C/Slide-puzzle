@@ -13,6 +13,10 @@
     
     </header>
     <main>
+        <div class="game_info">
+            <div id="flex"><p id="time_label">Time: </p><span id="time">0s</span></div>
+            <div id="flex"><p id="moves_label">Moves: </p><span id="moves">0</span></div>
+        </div>
         <div id="game_field">
             <div class="cell empty" id="cell_1"></div>
             <div class="cell empty" id="cell_2"></div>
@@ -24,11 +28,10 @@
             <div class="cell empty" id="cell_8"></div>
             <div class="cell empty" id="cell_9"></div>
         </div>
-        <div class="game_info">
+        <div class="game_action">
             <button id="start">New game</button>
             <button id="reset">Restart</button>
-            <div id="flex"><p id="time_label">Time: </p><span id="time">0s</span></div>
-            <div id="flex"><p id="moves_label">Moves: </p><span id="moves">0</span></div>
+            <i class="fa-solid fa-bolt" id="fast_mode"></i>
         </div>
 
         <div class="modal" id="modal">

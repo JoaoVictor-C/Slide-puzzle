@@ -18,7 +18,7 @@ body {
 header {
     width: 100%;
     height: fit-content;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 header h1 {
@@ -126,14 +126,45 @@ main {
     transform: translate(0, 0);
 }
 
+.game_action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8%;
+    height: fit-content;
+    width: 35%;
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid rgba(10, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.fa-bolt {
+    font-size: 1.3em;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid rgba(10, 0, 0, 0.2);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.fast {
+    background-color: #000;
+    color: #fff;
+}
+
 .game_info {
     display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr 1.5fr;
-    align-items: center;
-    justify-items: center;
-    width: 50%;
-    margin-top: 20px;
-    padding: 30px 0;
+    grid-template-columns: 1fr 1fr;
+    height: fit-content;
+    width: 30%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 10px;
     border: 1px solid rgba(10, 0, 0, 0.2);
     border-radius: 10px;
     background-color: #fff;
@@ -145,9 +176,9 @@ main {
     font-weight: bold;
 }
 
-.game_info button {
+.game_action button {
     padding: 10px 0;
-    width: 70%;
+    width: 30%;
     border: none;
     border-radius: 10px;
     background-color: #fff;
@@ -159,12 +190,12 @@ main {
     transition: all 0.1s ease-in-out;
 }
 
-.game_info button:hover {
+.game_action button:hover {
     opacity: 0.6;
     background-color: #fafafa;
 }
 
-.game_info button:active {
+.game_action button:active {
     opacity: 0.9;
 }
 
@@ -240,8 +271,8 @@ main {
 }
 
 footer {
-    margin-bottom: 20px;
-    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-size: 1em;
     font-weight: bold;
 }
 
@@ -265,4 +296,58 @@ footer a:active {
     align-items: center;
     gap: 15px;
     font-size: 1em;
+}
+
+@media (max-width: 768px) {
+
+    .language {
+        position: relative;
+        width: 50px;
+        height: 50px; 
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: -20px;
+    }
+
+    header {
+        margin-top: 10px;
+    }
+
+    .cell {
+        width: 90px;
+        height: 90px;
+    }
+
+    .game_action {
+        width: 50%;
+    }
+
+    .game_info {
+        width: 50%;
+    }
+
+    .game_action {
+        width: 90%;
+        height: 10%;
+        margin-top: 20px;
+    }
+
+    .game_info {
+        width: 90%;
+        height: 10%;
+        margin-top: 0;
+    }
+
+    .game_action button {
+        width: 40%;
+    }
+
+    .modal_content {
+        width: 60%;
+        height: 60%;
+    }
+
+    footer {
+        font-size: 1.5em;
+    }
 }

@@ -9,12 +9,16 @@ const win_modal = document.querySelector('#modal');
 const close_modal = document.querySelector('#modal_close');
 const restart_modal = document.querySelector('#modal_restart')
 const modal_message = document.querySelector('#modal_message');
+const fast_mode = document.querySelector('#fast_mode');
 const winner_board = [1, 2, 3, 4, 5, 6, 7, 8, 0];
 let initial_numbers = null;
 let interval = null;
 let timer = 1;
 let started = false;
 let finished = false;
+let animationInProgress = false;
+let fast = false;
+
 
 // Função para embaralhar um array usando o algoritmo Fisher-Yates
 const shuffle = (array) => {
@@ -80,7 +84,7 @@ const reset = () => {
 // Função para lidar com um movimento no jogo
 const move = (index) => {
     // Verifica se o jogo já acabou
-    if (finished) {
+    if (finished || animationInProgress) {
         return;
     }
     const empty_cell = game.querySelector('.empty');
@@ -90,18 +94,27 @@ const move = (index) => {
     const cell_row = Math.floor(index / 3);
     const cell_column = index % 3;
     const direction = getMoveDirection(index, empty_cell_index);
-    const numbers = Array.from(cells).map(cell => parseInt(cell.innerHTML));
+    
     // Verifica se a célula clicada pode ser movida para a célula vazia
     if ((cell_row === empty_cell_row && Math.abs(cell_column - empty_cell_column) === 1) || (cell_column === empty_cell_column && Math.abs(cell_row - empty_cell_row) === 1)) {
         // Move a célula clicada para a célula vazia e depois atualiza o valor
-        cells[index].style.transform = `translate(${direction.x}px, ${direction.y}px)`;
-        setTimeout(() => {
+        if (!fast) {
+            animationInProgress = true;
+            cells[index].style.transform = `translate(${direction.x}px, ${direction.y}px)`;
+            setTimeout(() => {
+                cells[empty_cell_index].innerHTML = cells[index].innerHTML;
+                cells[empty_cell_index].classList.remove('empty');
+                cells[index].innerHTML = 0;
+                cells[index].classList.add('empty');
+                cells[index].style.transform = 'translate(0px, 0px)';
+                animationInProgress = false;
+            }, 250);
+        } else {
             cells[empty_cell_index].innerHTML = cells[index].innerHTML;
             cells[empty_cell_index].classList.remove('empty');
             cells[index].innerHTML = 0;
             cells[index].classList.add('empty');
-            cells[index].style.transform = 'translate(0px, 0px)';
-        }, 250);
+        }
         // Incrementa o número de movimentos
         moves.innerHTML = parseInt(moves.innerHTML) + 1;
     }
@@ -120,19 +133,20 @@ const move = (index) => {
         started = true;
     }
 
-        if (JSON.stringify(numbers) === JSON.stringify(winner_board)) {
-            clearInterval(interval);
-            // Exibe o modal de vitória com informações de tempo e movimentos
-            document.querySelector('#modal_time').innerHTML = time.innerHTML;
-            document.querySelector('#modal_moves').innerHTML = moves.innerHTML;
-            win_modal.classList.add('active');
-            finished = true;
-        }
+    const numbers = Array.from(cells).map(cell => parseInt(cell.innerHTML));
+    if (JSON.stringify(numbers) === JSON.stringify(winner_board)) {
+        clearInterval(interval);
+        // Exibe o modal de vitória com informações de tempo e movimentos
+        document.querySelector('#modal_time').innerHTML = time.innerHTML;
+        document.querySelector('#modal_moves').innerHTML = moves.innerHTML;
+        win_modal.classList.add('active');
+        finished = true;
+    }
 };
 
 // Função para obter a direção do movimento
 const getMoveDirection = (currentIndex, emptyIndex) => {
-    const cellSize = 113; // Ajuste isso conforme necessário
+    const cellSize = 113;
 
     const currentRow = Math.floor(currentIndex / 3);
     const currentCol = currentIndex % 3;
@@ -154,6 +168,15 @@ close_modal.addEventListener('click', () => {
 restart_modal.addEventListener('click', () => {
     win_modal.classList.remove('active');
     start();
+});
+fast_mode.addEventListener('click', () => {
+    if (!fast_mode.classList.contains('fast')) {
+        fast_mode.classList.add('fast');
+        fast = true;
+    } else {
+        fast_mode.classList.remove('fast');
+        fast = false;
+    }
 });
 
 // Event listener para cada célula no tabuleiro do jogo
