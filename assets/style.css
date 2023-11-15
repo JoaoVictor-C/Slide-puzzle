@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #fcffff;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#game_field {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    gap: 13px;
+    position: relative;  
+    width: 400px;
+    height: 400px;
+    padding: 6px;
+    border: 1px solid rgba(10, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(10, 0, 0, 0.7);
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: bold;
+
+}
+
+.cell:hover {
+    background-color: rgba(200, 200, 200, 0.356);
+    box-shadow: 1px 1px 8px 8px rgba(0, 0, 0, 0.04), inset 0px 0px 8px 8px rgba(100, 100, 100, 0.01);
+}
+
+.cell:active {
+    background-color: rgba(150, 150, 150, 0.356);
+    box-shadow: 1px 1px 8px 8px rgba(0, 0, 0, 0.04), inset 0px 0px 4px 4px rgba(100, 100, 100, 0.01);
+}
+
+.empty {
+    cursor: default;
+    font: 0/0 a;
+}
+
+.empty:hover {
+    background-color: #fff;
+    box-shadow: none;
+}
+
+.empty:active {
+    background-color: #fff;
+    box-shadow: none;
+}
+
+.game_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr 1.5fr;
+    align-items: center;
+    justify-items: center;
+    width: 50%;
+    margin-top: 20px;
+    padding: 30px 0;
+    border: 1px solid rgba(10, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.game_info p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.game_info button {
+    padding: 10px 0;
+    width: 70%;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid rgba(10, 0, 0, 0.2);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.1s ease-in-out;
+}
+
+.game_info button:hover {
+    opacity: 0.6;
+    background-color: #fafafa;
+}
+
+.game_info button:active {
+    opacity: 0.9;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+.modal.active {
+    top: 0;
+}
+
+.modal_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+    height: 40%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal_content h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.modal_content p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.modal_content button {
+    padding: 10px 13px;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid rgba(10, 0, 0, 0.2);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.1s ease-in-out;
+}
+
+.modal_content button:hover {
+    opacity: 0.6;
+    background-color: #fafafa;
+}
+
+.modal_content button:active {
+    opacity: 0.9;
+}
+
+.modal_content .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+
+}
+
+footer {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+footer a {
+    text-decoration: none;
+    color: #6e6e6e;
+    transition: all 0.1s ease-in-out;
+}
+
+footer a:hover {
+    color: #313131;
+}
+
+footer a:active {
+    color: #000;
+}
