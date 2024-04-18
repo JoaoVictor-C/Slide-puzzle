@@ -19,8 +19,8 @@ You can play the game here: https://joaovictor-c.github.io/Sliding-game/
 To play the game, you simply need to clone the repository and open the HTML file in your browser:
 
 ```bash
-git clone https://github.com/yourusername/slide-puzzle-game.git
-cd slide-puzzle-game
+git clone https://github.com/JoaoVictor-C/Slide-puzzle.git
+cd Slide-puzzle
 open index.html # On macOS
 start index.html # On Windows
 ```
