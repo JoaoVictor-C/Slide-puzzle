@@ -4,13 +4,6 @@ Welcome to the Slide Puzzle Game! This project is a simple yet entertaining slid
 
 ![Screenshot of the Slide Puzzle Game](https://github.com/JoaoVictor-C/Slide-puzzle/blob/main/readme-images/slide-puzzle_printscreen.png?raw=true) 
 
-## Features
-
-- **Easy to Play**: Simply click on a tile next to the empty space, and it will slide into the vacant position.
-- **Dynamic Grid**: Automatically adjusts the grid size for different difficulty levels.
-- **Visual and Sound Effects**: Enhances the gaming experience with subtle animations and sounds.
-- **Fast mode**: You can change the animation velocity.
-
 ## Getting Started
 
 ### Prerequisites
