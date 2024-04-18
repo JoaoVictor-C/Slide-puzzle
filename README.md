@@ -2,7 +2,7 @@
 
 Welcome to the Slide Puzzle Game! This project is a simple yet entertaining sliding puzzle game that challenges players to organize tiles in the correct sequence to form a complete image. Created using pure HTML, CSS, and JavaScript, this game is easy to play and accessible from any modern web browser.
 
-![Screenshot of the Slide Puzzle Game](url-to-image-here) (Replace `url-to-image-here` with the actual URL of the game screenshot.)
+![Screenshot of the Slide Puzzle Game](https://github.com/JoaoVictor-C/Slide-puzzle/blob/main/readme-images/slide-puzzle_printscreen.png?raw=true) 
 
 ## Features
 
