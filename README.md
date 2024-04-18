@@ -1,5 +1,3 @@
-https://joaovictor-c.github.io/Sliding-game/
-
 # Slide Puzzle Game
 
 Welcome to the Slide Puzzle Game! This project is a simple yet entertaining sliding puzzle game that challenges players to organize tiles in the correct sequence to form a complete image. Created using pure HTML, CSS, and JavaScript, this game is easy to play and accessible from any modern web browser.
@@ -18,6 +16,10 @@ Welcome to the Slide Puzzle Game! This project is a simple yet entertaining slid
 ### Prerequisites
 
 Before you start, ensure you have a modern web browser such as Google Chrome, Mozilla Firefox, or Safari installed on your device.
+
+### Github pages site
+
+You can play the game here: https://joaovictor-c.github.io/Sliding-game/
 
 ### Installation
 
