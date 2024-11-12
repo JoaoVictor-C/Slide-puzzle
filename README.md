@@ -12,7 +12,7 @@ Before you start, ensure you have a modern web browser such as Google Chrome, Mo
 
 ### Github pages site
 
-You can play the game here: https://joaovictor-c.github.io/Sliding-game/
+You can play the game here: https://joaovictor-c.github.io/Slide-puzzle/
 
 ### Installation
 
